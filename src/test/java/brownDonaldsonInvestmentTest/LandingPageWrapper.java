@@ -23,7 +23,7 @@ public class LandingPageWrapper {
         landingPage.verifyLandingPage();
         landingPage.goToNewSSLAccountCreationPage();
         landingPage.createNewSSLAccount();
-//        Add an assert here later on
+//        Add an assert here later on to confirm
     }
 
     @After
