@@ -15,7 +15,7 @@ import registeredUserAccount.UserAccountHomePage;
 public class UserAccountHomePageWrapper {
 
     UserAccountHomePage userAccountHomePage = new UserAccountHomePage();
-    HomePage homePage = new HomePage(new ChromeDriver());
+//    HomePage homePage = new HomePage(new ChromeDriver());
 
     @Before
     public void setUp() throws Exception {
@@ -27,11 +27,6 @@ public class UserAccountHomePageWrapper {
         String username = "WaleJamesMeMe";
         String password = "Skr2ll8mings";
         userAccountHomePage.logIntoAccount(username, password);
-    }
-
-    @Test
-    public void deleteMeAfter() {
-        homePage.searchMe();
     }
 
     @After
