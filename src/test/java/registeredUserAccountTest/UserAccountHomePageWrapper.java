@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.chrome.ChromeDriver;
+import pages.HomePage;
 import registeredUserAccount.UserAccountHomePage;
 
 /**
@@ -13,6 +15,7 @@ import registeredUserAccount.UserAccountHomePage;
 public class UserAccountHomePageWrapper {
 
     UserAccountHomePage userAccountHomePage = new UserAccountHomePage();
+    HomePage homePage = new HomePage(new ChromeDriver());
 
     @Before
     public void setUp() throws Exception {
@@ -24,6 +27,11 @@ public class UserAccountHomePageWrapper {
         String username = "WaleJamesMeMe";
         String password = "Skr2ll8mings";
         userAccountHomePage.logIntoAccount(username, password);
+    }
+
+    @Test
+    public void deleteMeAfter() {
+        homePage.searchMe();
     }
 
     @After

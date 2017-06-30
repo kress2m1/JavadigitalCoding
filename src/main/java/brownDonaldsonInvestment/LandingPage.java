@@ -85,7 +85,6 @@ public class LandingPage {
                 break;
             }
         }
-
     }
 
     public void closeBrower() throws Exception {
