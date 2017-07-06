@@ -7,17 +7,11 @@ import org.openqa.selenium.WebDriver;
  */
 public class HomePage extends BasePage {
 
+    BasePage newBasePage = new BasePage();
+
 //    this is a constructor from the superclass, BasePage
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public boolean checkUserDetails(String username) {
-        return driver.getPageSource().toLowerCase().contains(username.toLowerCase());
-    }
-
-    @Override
-    public void searchMe() {
-        super.searchMe();
-    }
 }

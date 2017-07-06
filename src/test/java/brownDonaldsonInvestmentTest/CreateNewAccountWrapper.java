@@ -1,33 +1,32 @@
 package brownDonaldsonInvestmentTest;
 
 import org.junit.*;
-import brownDonaldsonInvestment.LandingPage;
-import registeredUserAccount.UserAccountHomePage;
+import pages.CreateAccountPage;
 
 /**
  * Created by andre on 12/06/17.
  * Run the test for the landing page from here
  */
 
-public class LandingPageWrapper {
+public class CreateNewAccountWrapper {
 
-    LandingPage landingPage = new LandingPage();
+    CreateAccountPage createAccountPage = new CreateAccountPage();
 
     @Before
     public void setUp() throws Exception {
-        landingPage.openLandingPage("chrome");
+        createAccountPage.openLandingPage("chrome");
     }
 
     @Test
     public void confirmLandingPageTitle() throws Exception {
-        landingPage.verifyLandingPage();
-        landingPage.goToNewSSLAccountCreationPage();
-        landingPage.createNewSSLAccount();
+        createAccountPage.verifyLandingPage();
+        createAccountPage.goToNewSSLAccountCreationPage();
+        createAccountPage.createNewSSLAccount();
 //        Add an assert here later on to confirm
     }
 
     @After
     public void tearDown() throws Exception {
-        landingPage.closeBrower();
+        createAccountPage.closeBrower();
     }
 }

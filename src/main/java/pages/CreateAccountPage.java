@@ -1,4 +1,4 @@
-package brownDonaldsonInvestment;
+package pages;
 
 //import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -6,38 +6,29 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import pages.BasePage;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
 
 /**
  * Created by andre on 24/05/17.
  *
  */
-public class LandingPage {
+public class CreateAccountPage extends BasePage {
 
-    protected WebDriver driver;
-    protected String baseURL;
     protected WebElement username;
     protected WebElement password;
 
-    public void openLandingPage(String browser) {
-        String dirPath = System.getProperty("user.dir");
-        if (browser.equals("firefox")) {
-            String firefoxPath = dirPath + "/drivers/linux/firefox/geckodriver";
-            System.setProperty("webdriver.gecko.driver", firefoxPath);
-            driver = new FirefoxDriver();
-        } else if (browser.equals("chrome")) {
-            String chromePath = dirPath + "/drivers/linux/chrome/chromedriver";
-            System.setProperty("webdriver.chrome.driver", chromePath);
-            driver = new ChromeDriver();
+    public void goToCreateAccountPage() {
+        for (WebElement createAccountTab: driver.findElements(By.tagName("a"))
+             ) {
+            if (createAccountTab.getText().equals("Create a new account")) {
+                createAccountTab.click();
+                break;
+            }
         }
-
-//        launch the browser
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        baseURL = "https://bdonline.sqe.com/";
-        driver.navigate().to(baseURL);
     }
 
     public void verifyLandingPage() {

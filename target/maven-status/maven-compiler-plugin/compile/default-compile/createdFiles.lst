@@ -1,6 +1,3 @@
-uk/gov/hmrc/Compute.class
-brownDonaldsonInvestment/LandingPage.class
-registeredUserAccount/UserAccountHomePage.class
-uk/gov/hmrc/App.class
 pages/HomePage.class
 pages/BasePage.class
+pages/CreateAccountPage.class

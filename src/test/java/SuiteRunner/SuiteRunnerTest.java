@@ -1,6 +1,6 @@
 package SuiteRunner;
 
-import brownDonaldsonInvestmentTest.LandingPageWrapper;
+import brownDonaldsonInvestmentTest.CreateNewAccountWrapper;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -14,7 +14,7 @@ import registeredUserAccountTest.UserAccountHomePageWrapper;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        LandingPageWrapper.class,
+        CreateNewAccountWrapper.class,
         UserAccountHomePageWrapper.class
 })
 public class SuiteRunnerTest {

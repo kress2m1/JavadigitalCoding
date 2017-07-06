@@ -5,8 +5,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.BasePage;
 import pages.HomePage;
-import registeredUserAccount.UserAccountHomePage;
 
 /**
  * Created by andre on 15/06/17.
@@ -14,23 +14,24 @@ import registeredUserAccount.UserAccountHomePage;
  */
 public class UserAccountHomePageWrapper {
 
-    UserAccountHomePage userAccountHomePage = new UserAccountHomePage();
+    BasePage basePage = new BasePage();
 //    HomePage homePage = new HomePage(new ChromeDriver());
 
     @Before
     public void setUp() throws Exception {
-        userAccountHomePage.startBrowserSession("chrome");
+        basePage.openLandingPage("chrome");
+
     }
 
     @Test
     public void logIntoSSLAccount() {
         String username = "WaleJamesMeMe";
         String password = "Skr2ll8mings";
-        userAccountHomePage.logIntoAccount(username, password);
+        basePage.logIntoAccount(username, password);
     }
 
     @After
     public void tearDown() throws Exception {
-        userAccountHomePage.closeBrowserSession();
+        basePage.closeBrowserSession();
     }
 }
