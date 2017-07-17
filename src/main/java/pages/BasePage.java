@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -34,6 +35,7 @@ public class BasePage {
     }
 
     public void openLandingPage(String browser) {
+        //        launch the browser
         String dirPath = System.getProperty("user.dir");
         if (browser.equals("firefox")) {
             String firefoxPath = dirPath + "/drivers/linux/firefox/geckodriver";
@@ -44,8 +46,6 @@ public class BasePage {
             System.setProperty("webdriver.chrome.driver", chromePath);
             driver = new ChromeDriver();
         }
-
-//        launch the browser
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         baseURL = "https://bdonline.sqe.com/";
@@ -55,6 +55,12 @@ public class BasePage {
 
     public void logIntoAccount(String username, String password) {
         String userHomePageTitle = "B&D - Market News";
+        for (WebElement loginTagText : driver.findElements(By.tagName("a"))) {
+            if (loginTagText.getText().equals("Login for existing users")) {
+                loginTagText.click();
+                break;
+            }
+        }
         WebElement loginUsername = driver.findElement(By.name("login"));
         loginUsername.sendKeys(username);
         WebElement loginPassword = driver.findElement(By.name("password"));

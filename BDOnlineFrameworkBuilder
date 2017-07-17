@@ -1,0 +1,21 @@
+BDOnline
+	Login Page -- just fields to login or create an account available
+		_LOGIN - this will be our basepage
+			HOME:
+				Market News:
+			YOUR ACCOUNT:
+				View Holdings
+				Trade
+				View Open Orders
+				Change Password
+				Logout
+			RESEARCH:
+				Quote:
+			SUPPORT:
+				Help:
+				Glossary:
+				Site Map:
+			CORPORATE INFO:
+				About:
+		_CREATE ACCOUNT -
+		    CREATE ACCOUNT:

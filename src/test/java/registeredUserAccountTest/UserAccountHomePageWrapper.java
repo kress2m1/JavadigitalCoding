@@ -15,7 +15,8 @@ import pages.HomePage;
 public class UserAccountHomePageWrapper {
 
     BasePage basePage = new BasePage();
-//    HomePage homePage = new HomePage(new ChromeDriver());
+    String username = "WaleJamesMeMe";
+    String password = "Skr2ll8mings";
 
     @Before
     public void setUp() throws Exception {
@@ -25,8 +26,6 @@ public class UserAccountHomePageWrapper {
 
     @Test
     public void logIntoSSLAccount() {
-        String username = "WaleJamesMeMe";
-        String password = "Skr2ll8mings";
         basePage.logIntoAccount(username, password);
     }
 
