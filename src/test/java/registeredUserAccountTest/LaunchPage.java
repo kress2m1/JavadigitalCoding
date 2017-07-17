@@ -19,14 +19,6 @@ public class LaunchPage {
         homePage.gotoLandingPage();
     }
 
-    @Test
-    public void doSomething() {
-        WebElement selector = driver
-        Select selectCar = new Select();
-
-
-    }
-
     @After
     public void closeBrowser() {
 
