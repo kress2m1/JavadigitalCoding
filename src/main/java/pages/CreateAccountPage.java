@@ -63,10 +63,19 @@ public class CreateAccountPage extends BasePage {
         if (!tickRememberMeBox.isSelected()) {
             tickRememberMeBox.click();
         }
+        /**
+         * Another way of writing the select statement above is as follows (using the boolean keyword
+         * WebElement tickNewsletterBox = driver.findElement(By.name("newsletter"));
+         * boolean newsletterBoxDefaultStatus = tickNewsletterBox.isSelected;
+         * if(newsletterBoxDefaultStatus != true) {
+         *  driver.findElement(By.name("newsletter")).click();
+         * }
+         */
         WebElement tickNewsletterBox = driver.findElement(By.name("newsletter"));
         if (!tickNewsletterBox.isSelected()) {
             tickNewsletterBox.click();
         }
+
         WebElement selectLoginTab = driver.findElement(By.name("login_button"));
         selectLoginTab.click();
 

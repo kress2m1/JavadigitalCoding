@@ -16,8 +16,7 @@ public class BasePage {
 
     protected WebDriver driver;
     protected String baseURL;
-    protected WebElement username;
-    protected WebElement password;
+    private By loginUsername = By.name("login");
 
     /**
      * This constructor will initialise the driver
