@@ -20,6 +20,7 @@ public class CreateAccountPage extends BasePage {
 
     protected WebElement username;
     protected WebElement password;
+    protected By loginButton = By.name("login_button");
 
     public void goToCreateAccountPage() {
         for (WebElement createAccountTab: driver.findElements(By.tagName("a"))
@@ -79,7 +80,7 @@ public class CreateAccountPage extends BasePage {
         WebElement selectLoginTab = driver.findElement(By.name("login_button"));
         selectLoginTab.click();
 
-        for (WebElement aTagName : driver.findElements(By.tagName("a"))) {
+        for (WebElement aTagName : driver.findElements(anchorTag)) {
             if (aTagName.getText().equals("Something")) {
                 aTagName.click();
                 break;

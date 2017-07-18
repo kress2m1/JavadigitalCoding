@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -16,7 +15,8 @@ public class BasePage {
 
     protected WebDriver driver;
     protected String baseURL;
-    private By loginUsername = By.name("login");
+    protected By loginUsername = By.name("login");
+    protected By anchorTag = By.tagName("a");
 
     /**
      * This constructor will initialise the driver
@@ -52,9 +52,9 @@ public class BasePage {
     }
 
 
-    public void logIntoAccount(String username, String password) {
+    public HomePage logIntoAccount(String username, String password) {
         String userHomePageTitle = "B&D - Market News";
-        for (WebElement loginTagText : driver.findElements(By.tagName("a"))) {
+        for (WebElement loginTagText : driver.findElements(anchorTag)) {
             if (loginTagText.getText().equals("Login for existing users")) {
                 loginTagText.click();
                 break;
@@ -68,6 +68,7 @@ public class BasePage {
         registeredLoginTab.click();
         System.out.println(driver.getTitle());
         assert driver.getTitle().equals(userHomePageTitle);
+        return new HomePage(driver);
     }
 
     public void closeBrowserSession() throws Exception {
