@@ -14,7 +14,6 @@ import registeredUserAccountTest.UserAccountHomePageWrapper;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        CreateNewAccountWrapper.class,
         UserAccountHomePageWrapper.class
 })
 public class SuiteRunnerTest {
