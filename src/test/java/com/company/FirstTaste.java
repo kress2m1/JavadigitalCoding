@@ -20,7 +20,7 @@ public class FirstTaste {
 
     @Before
     public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "/media/andredadalinux/Andre Drive/Java2016/JavaCodingTutorials/digitalcoding/drivers/linux/chrome/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\oogunseyila\\Documents\\RadiusRepo\\JavadigitalCoding\\drivers\\windows\\chrome\\chromedriver.exe");
         driver = new ChromeDriver();
 
         driver.manage().window().maximize();
