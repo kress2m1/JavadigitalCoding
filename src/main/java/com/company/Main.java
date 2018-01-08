@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by andredadalinux on 20/07/17.
+ * Created by yemi.
  */
 public class Main {
 
