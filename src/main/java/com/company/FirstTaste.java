@@ -1,7 +1,7 @@
 package com.company;
 
 /**
- * Created by andredadalinux on 20/07/17.
+ * Created by yemi.
  */
 public class FirstTaste {
 

@@ -25,7 +25,7 @@ public class FirstTaste {
 
     @Before
     public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\oogunseyila\\Documents\\RadiusRepo\\JavadigitalCoding\\drivers\\windows\\chrome\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\oogunseyila\\Documents\\RadiusRepo\\VelocityFramework\\drivers\\windows\\chrome\\chromedriver.exe");
         driver = new ChromeDriver();
 
         driver.manage().window().maximize();
@@ -62,17 +62,17 @@ public class FirstTaste {
     }
 
     @Test
-    public void testTwo() {
+    public void CheckVehicleTile() {
         validLogin();
-        WebElement vehicleTile = driver.findElement(By.xpath("//*[@id=\"main-menu-row-first\"]/div[4]/div"));
+        WebElement vehicleTile = driver.findElement(By.className("background_image"));
         vehicleTile.click();
         System.out.println(driver.getCurrentUrl());
-        WebElement ManageFleet = driver.findElement(By.id("vehicle-check-manage-fleet"));
-        WebElement ManageGroups = driver.findElement(By.className("vehicle-check-manage-groups"));
+       // WebElement ManageFleet = driver.findElement(By.id("vehicle-check-manage-fleet"));
+        //WebElement ManageGroups = driver.findElement(By.className("vehicle-check-manage-groups"));
         //WebElement Reports = driver.findElement(By.className(""))
         //WebElement ManageQuestions
-        assertTrue(ManageFleet.isDisplayed());
-        assertTrue(ManageGroups.isDisplayed());
+        //assertTrue(ManageFleet.isDisplayed());
+       // assertTrue(ManageGroups.isDisplayed());
 
     }
 
@@ -81,6 +81,13 @@ public class FirstTaste {
         String pageURL = driver.getCurrentUrl();
         System.out.println(pageURL);
     }
+    @Test
+    public void SelectManageFleet() {
+        CheckVehicleTile();
+        WebElement ManageFleetTile = driver.findElement(By.id("vehicle-check-manage-fleet"));
+        ManageFleetTile.click();
+    }
+
 
     @After
     public void tearDown() throws Exception {
